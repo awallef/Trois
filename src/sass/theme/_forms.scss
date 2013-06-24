@@ -1,0 +1,22 @@
+/***
+ *    ___________                           
+ *    \_   _____/__________  _____   ______ 
+ *     |    __)/  _ \_  __ \/     \ /  ___/ 
+ *     |     \(  <_> )  | \/  Y Y  \\___ \  
+ *     \___  / \____/|__|  |__|_|  /____  > 
+ *         \/                    \/     \/  
+ */
+ 
+label {
+	margin-bottom: 10px;
+}
+
+.form textarea,
+.form input[type="number"],
+.form input[type="text"],
+.form input[type="password"] {
+	font-size: 16px;
+	height: auto;
+	margin-bottom: 15px;
+	padding: 7px 9px;
+}

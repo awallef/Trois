@@ -1,0 +1,72 @@
+/***
+ *            ____ ___   __  .__.__          
+ *    _______|    |   \_/  |_|__|  |   ______
+ *    \_  __ \    |   /\   __\  |  |  /  ___/
+ *     |  | \/    |  /  |  | |  |  |__\___ \ 
+ *     |__|  |______/   |__| |__|____/____  >
+ *                                        \/ 
+ */
+
+
+@function getRColumnWidthNmber($columns, $gutter)
+{
+  $value :  ( 100 - ( ($columns - 1)  * ( 2 * $gutter)  ) ) / $columns;
+  $value :  floor( $value );
+  @return $value;
+}
+
+@function getRIeColumnWidthNmber($columns, $gutter)
+{
+  $value :  ( 99 - ( ($columns - 1)  * ( 2 * $gutter)  ) ) / $columns;
+  $value :  floor( $value );
+  @return $value;
+}
+
+@function getRColumnWidth($columns, $gutter)
+{
+  @return percent( getRColumnWidthNmber( $columns, $gutter ) );
+}
+
+@function getRIeColumnWidth($columns, $gutter)
+{
+  @return percent( getRIeColumnWidthNmber( $columns, $gutter ) );
+}
+
+@mixin rColumnBasicsStyles($gutter, $pos: 3)
+{
+	float : left;
+	margin-left: percent( $gutter );
+	margin-right: percent( $gutter );
+	@if $pos == 1 { margin-left: 0 }
+	@if $pos == 2 { margin-right: 0}
+}
+
+
+@mixin rIeColumn($columns, $gutter, $pos: 3)
+{
+	width : getRIeColumnWidth( $columns, $gutter );
+	@include rColumnBasicsStyles( $gutter, $pos );
+}
+
+
+@mixin rColumn($columns, $gutter, $pos: 3)
+{
+	width : getRColumnWidth( $columns, $gutter );
+	@include rColumnBasicsStyles( $gutter, $pos );
+}
+
+@mixin rSpanColumn($span, $columns, $gutter, $pos: 3)
+{
+	width : percent( (($span / $columns) *  (100 - (($columns - 1) * ( 2 * $gutter)) )) + ( ( $span - 1 ) * ( 2 * $gutter ) ) );
+	
+	//width : percent( $span * ( getRColumnWidthNmber( $columns, $gutter ) + ( ( $span - 1 ) * $gutter ) ) );
+	@include rColumnBasicsStyles( $gutter, $pos );
+}
+
+@mixin killColumn()
+{
+	width: inherit;
+	float: none;
+	margin-left: 0;
+	margin-right: 0;
+}

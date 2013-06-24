@@ -1,0 +1,37 @@
+/***
+ *     ____ ___   __  .__.__          
+ *    |    |   \_/  |_|__|  |   ______
+ *    |    |   /\   __\  |  |  /  ___/
+ *    |    |  /  |  | |  |  |__\___ \ 
+ *    |______/   |__| |__|____/____  >
+ *                                 \/ 
+ */
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+@function percent( $value )
+{
+	@return percentage( $value / 100  );
+}
+
+@function floorPercent( $value )
+{
+	@return percentage( floor( $value / 10) / 10  );
+}
+
+@mixin center()
+{
+	margin-left:auto;
+	margin-right:auto;
+	@include clearfix;
+}

@@ -1,0 +1,17 @@
+### Mac OS X
+*.DS_Store
+ 
+### NetBeans
+nbproject/private/*
+
+ 
+### composer
+*.lock
+vendors/*
+vendor/*
+ 
+### compass
+*.sass-cache*
+ 
+### npm bower grunt
+*node_modules*

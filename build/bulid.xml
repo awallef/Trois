@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BUILD PUREMVC JS -->
+<project name="trois.js" basedir="../" default="buildLib">
+
+	<!-- PROPERTIES -->
+	<property name="src.dir" 		value="${basedir}/src/js/"/>
+	<property name="bin.dir" 		value="${basedir}/webroot/js/"/>
+	<property name="build.dir"  	value="${basedir}/build"/>
+	<property name="report.dir"  	value="${basedir}/report"/>
+	<property name="template.dir" 	value="${build.dir}/template"/>
+	<property name="config.dir" 	value="${build.dir}/config"/>
+	<property name="lib.dir" 		value="${build.dir}/lib"/>
+	<property file="${config.dir}/build.properties" />
+	<property name="jscompjar" 		location="${lib.dir}/${google.closure.jar}" />
+
+	<!-- TARGET: buildLib -->
+	<target name="buildLib" description="Package the trois library">
+
+		<!-- DEFINE COMPILER TASK -->
+		<taskdef classname="com.google.javascript.jscomp.ant.CompileTask" 
+				 name="jscomp" classpath="${jscompjar}"/>
+		
+		<!-- CLEAN OUTPUT DIR -->
+		<delete>
+			<fileset dir="${bin.dir}" includes="${library.name}.js" />
+		</delete>
+
+		<!-- CONCATENATE SCRIPTS -->
+		<concat destfile="${bin.dir}/${library.name}.js" append="no" 
+				encoding="UTF-8" outputencoding="UTF-8" fixlastline="true">
+			<path>
+				<!-- 3xw -->
+                                <pathelement location="${template.dir}/3xw.header.inc" />
+                                
+                                <!--  3xw webAppCapable -->
+                                <pathelement location="${src.dir}/ch/3xw/mobile/webAppCapable.js" />
+                                
+                                <!-- 3xw bootstrap -->
+                                <pathelement location="${src.dir}/ch/3xw/plugins/trois/3xw.bootstrap.js" />
+                                
+                                
+			</path>
+		</concat>
+
+		<!-- MINIFY -->
+		<jscomp warning="${google.closure.warnlevel}" debug="false" 
+			    compilationLevel="${google.closure.complevel}" 
+			    output="${bin.dir}/${library.name}.min.js">
+
+			<sources dir="${bin.dir}">
+				<file name="${library.name}.js" />
+			</sources>
+			
+		</jscomp>
+                
+                
+	</target>
+	
+</project>

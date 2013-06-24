@@ -1,0 +1,74 @@
+/***
+ *       _____             .___.__        
+ *      /     \   ____   __| _/|__|____   
+ *     /  \ /  \_/ __ \ / __ | |  \__  \  
+ *    /    Y    \  ___// /_/ | |  |/ __ \_
+ *    \____|__  /\___  >____ | |__(____  /
+ *            \/     \/     \/         \/ 
+ */
+ 
+.media-action-pannel
+{
+	padding:10px;
+	margin: 10px;
+}
+
+.media-search-pannel
+{
+	@include border-radius(5px);
+	background-color:$_blue_light;
+	padding:10px;
+	
+	select
+	{
+		margin-right: 10px;
+	}
+}
+
+.nav-tabs > .active > #media-tab-edit,
+#media-edit-pannel
+{
+	background-color: $_blue_light;
+}
+
+.media-thumb a
+{
+  color: black;
+}
+ 
+.media-thumb
+{
+ @include border-radius(5px);
+ background-color: #888;
+ width: 150px;
+ padding: 10px;
+ margin: 0 10px 10px 0;
+ float:left;
+}
+
+.media-image {
+    text-align : center;
+        img {
+            height: 100px;
+        }
+}
+
+.media-info {
+    //color: white;
+    margin: 5px auto;
+    text-align: center;
+    height: 90px;
+    word-wrap:break-word;
+}
+
+.media-title {
+    color: black;
+}
+
+.media-details {
+    font-style: italic;
+}
+ 
+ .video {
+	 background-color: $_pink_light;
+ }

@@ -1,0 +1,135 @@
+/***
+*      _________ __  .__        __            ___________            __                
+*     /   _____//  |_|__| ____ |  | _____.__. \_   _____/___   _____/  |_  ___________ 
+*     \_____  \\   __\  |/ ___\|  |/ <   |  |  |    __)/  _ \ /  _ \   __\/ __ \_  __ \
+*     /        \|  | |  \  \___|    < \___  |  |     \(  <_> |  <_> )  | \  ___/|  | \/
+*    /_______  /|__| |__|\___  >__|_ \/ ____|  \___  / \____/ \____/|__|  \___  >__|   
+*            \/              \/     \/\/           \/                         \/       
+*/
+html,
+body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+   // margin: 0 auto -60px;
+}
+
+.navbar-fixed-top {
+	position: inherit;
+	margin-bottom: 20px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+    height: 60px;
+}
+
+/*
+#footer {
+    background-color: #1B1B1B;
+    background-image: -moz-linear-gradient(top, #222, #111);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
+    background-image: -webkit-linear-gradient(top, #222, #111);
+    background-image: -o-linear-gradient(top, #222, #111);
+    background-image: linear-gradient(to bottom, #222, #111);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222', endColorstr='#ff111111', GradientType=0);
+    border-color: #252525;
+}
+*/
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    /*#footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }*/
+}
+
+/***
+ *    ___________     ___.    
+ *    \__    ___/____ \_ |__  
+ *      |    |  \__  \ | __ \ 
+ *      |    |   / __ \| \_\ \
+ *      |____|  (____  /___  /
+ *                   \/    \/ 
+ */
+
+.tab-pane {
+	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	border-left: 1px solid #DDD;
+	padding: 10px;
+	@include border-top-right-radius(5px);
+	@include border-bottom-right-radius(5px);
+	@include border-bottom-left-radius(5px);
+}
+
+.nav{
+	margin-bottom: 0;
+}
+
+
+/***
+*       _____                               
+*      /  _  \_______   ____ _____    ______
+*     /  /_\  \_  __ \_/ __ \\__  \  /  ___/
+*    /    |    \  | \/\  ___/ / __ \_\___ \ 
+*    \____|__  /__|    \___  >____  /____  >
+*            \/            \/     \/     \/ 
+*/
+body {
+    background: whiteSmoke;
+}
+
+.related,
+.welcome,
+.welcome-container,
+.index,
+.view,
+.form{
+    padding: 19px 29px 29px;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+
+@media (max-width: 480px) {
+    
+    body {
+        background: white;
+    }
+    
+    .related,
+    .index,
+    .view,
+    .form { 
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        -webkit-box-shadow: 0;
+        -moz-box-shadow: 0;
+        box-shadow: 0;
+    }
+}
