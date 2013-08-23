@@ -29,11 +29,15 @@ class TroisImageView extends MediaView {
             }
         }
         
+        $modified = @filemtime (CACHE . 'thumbs/' . $thumbName);
+        
         $pos1 = strrpos( $params['image'], '.' );
         $id = substr( $params['image'], $pos1 + 1, 8 );
         $this->response->type($id);
         $this->viewVars['path'] = CACHE . 'thumbs' . DS . $thumbName;
         $this->viewVars['download'] = false;
+        $this->viewVars['cache'] = '+1 day';
+        $this->viewVars['modified'] = '@' . $modified; // Must be a string to work. See MediaView->render()
         parent::render();
         
     }
