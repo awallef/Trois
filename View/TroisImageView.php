@@ -24,7 +24,7 @@ class TroisImageView extends MediaView {
                 unlink($this->viewVars['params']['image']);
                 
             }else {
-                $this->viewVars['params']['image'] = APP . 'webroot/' . $this->viewVars['params']['image'];
+                $this->viewVars['params']['image'] = WWW_ROOT . $this->viewVars['params']['image'];
                 $this->_resizeFile();
             }
         }
