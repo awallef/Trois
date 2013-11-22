@@ -55,9 +55,9 @@ Configure::write('Trois.media', array(
 	
 	'delete' => true,
 	
-	'user' => 'antoine3xwch',
+	'user' => 'user',
 	
-	'secret' => '1c8304742c439ed217a2f0dd329fccc7'
+	'secret' => 'secret'
 
 ));
 */
